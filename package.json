@@ -1,0 +1,49 @@
+{
+  "name": "@ert78gb/fastify-google-cloud-run-options",
+  "version": "0.0.1",
+  "description": "Fastify Google Cloud Run configuration",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js"
+  },
+  "type": "module",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "tap && tsd"
+  },
+  "keywords": [
+    "fastify",
+    "google",
+    "cloud",
+    "run"
+  ],
+  "repository": {
+    "url": "https://github.com/ert78gb/fastify-google-cloud-run-options"
+  },
+  "author": "Robert Kiss <ert78gb@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "lib/"
+  ],
+  "engines": {
+    "node": ">=14.17.0"
+  },
+  "dependencies": {
+    "@ert78gb/pino-google-cloud-run-options": "^1.1.0",
+    "gcp-metadata": "^5.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.18.0",
+    "eslint-plugin-unicorn": "^42.0.0",
+    "flush-write-stream": "^2.0.0",
+    "fastify": "^4.1.0",
+    "nock": "^13.2.7",
+    "split2": "^4.1.0",
+    "tap": "^16.3.0",
+    "tsd": "^0.21.0"
+  },
+  "tsd": {
+    "directory": "test"
+  }
+}
