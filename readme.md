@@ -40,6 +40,6 @@ If the app runs in development mode (not in the Cloud Run runtime) then the requ
 ```json5
 {
   "logging.googleapis.com/trace": 1,
-	//...
+  //...
 }
 ```
