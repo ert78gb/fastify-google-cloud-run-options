@@ -1,3 +1,7 @@
 import { FastifyServerOptions } from 'fastify'
 
-export default function fastifyServerOptions(): Promise<FastifyServerOptions>
+export interface Options {
+	idGenerator?: 'uuid' | 'sequence'
+}
+
+export default function fastifyServerOptions(options?: Options): Promise<FastifyServerOptions>
