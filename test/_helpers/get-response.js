@@ -3,7 +3,9 @@ import pino from 'pino'
 import {once, sink} from './helper.js'
 
 export default async function getResponseWithLog (fastifyServerOptions, traceHeader) {
-	const options = await fastifyServerOptions()
+	const options = typeof fastifyServerOptions === 'function'
+		? await fastifyServerOptions()
+		: fastifyServerOptions
 	const stream = sink()
 	options.logger = pino(options.logger, stream)
 	const app = fastify(options)

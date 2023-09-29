@@ -1,1 +1,3 @@
-test-regex: test/.*.test.js$
+allow-incomplete-coverage: true
+include:
+  - test/**/*.test.js
