@@ -1,3 +1,2 @@
-job: 1
 include:
   - test/**/*.test.js
