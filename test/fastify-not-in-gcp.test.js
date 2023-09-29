@@ -17,3 +17,13 @@ tap.test('trace id should be a number', async ({equal, match}) => {
 	equal(response.statusCode, 200)
 	match(log['logging.googleapis.com/trace'], /\d*/)
 })
+
+tap.test('should support uuid as request id', async ({equal, match}) => {
+	const options = await fastifyServerOptions({
+		idGenerator: 'uuid'
+	})
+	const {response, log} = await getResponseWithLog(options)
+
+	equal(response.statusCode, 200)
+	match(log['logging.googleapis.com/trace'], /^[\dA-Fa-f-]{36}$/)
+})
