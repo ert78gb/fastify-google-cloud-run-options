@@ -20,7 +20,7 @@ tap.test('trace id should be a number', async ({equal, match}) => {
 
 tap.test('should support uuid as request id', async ({equal, match}) => {
 	const options = await fastifyServerOptions({
-		idGenerator: 'uuid'
+		idGenerator: 'uuid',
 	})
 	const {response, log} = await getResponseWithLog(options)
 

@@ -8,6 +8,10 @@ export const GCP_PROJECT = 'fastify-project'
  */
 export default function lifecycles (tap) {
 
+	tap.before(() => {
+		nock.disableNetConnect()
+	})
+
 	tap.beforeEach(() => {
 		nock(HOST_ADDRESS)
 			.get(`${BASE_PATH}/instance`)
@@ -28,5 +32,9 @@ export default function lifecycles (tap) {
 
 	tap.afterEach(() => {
 		nock.cleanAll()
+	})
+
+	tap.after(() => {
+		nock.enableNetConnect()
 	})
 }
