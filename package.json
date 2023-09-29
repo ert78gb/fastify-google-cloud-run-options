@@ -10,7 +10,7 @@
   "types": "./lib/index.d.ts",
   "scripts": {
     "lint": "eslint .",
-    "test": "tap && tsd"
+    "test": "node ./test/fastify-in-gcp.test.js && node ./test/fastify-not-in-gcp.test.js && tsd"
   },
   "keywords": [
     "fastify",
