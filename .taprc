@@ -1,3 +1,5 @@
 allow-incomplete-coverage: true
+#disable-coverage: true
 include:
   - test/**/*.test.js
+timeout: 10
