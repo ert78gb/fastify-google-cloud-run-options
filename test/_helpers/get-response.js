@@ -7,8 +7,10 @@ export default async function getResponseWithLog (fastifyServerOptions, traceHea
 		? await fastifyServerOptions()
 		: fastifyServerOptions
 	const stream = sink()
-	options.logger = pino(options.logger, stream)
-	const app = fastify(options)
+	const optionsClone = {...options}
+	delete  optionsClone.logger
+	optionsClone.loggerInstance = pino(options.logger, stream)
+	const app = fastify(optionsClone)
 	app.get('/', (request, reply) => {
 		request.log.info('message')
 		reply.send('hi')
