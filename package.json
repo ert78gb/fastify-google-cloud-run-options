@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@ert78gb/pino-google-cloud-run-options": "^2.0.0",
-    "gcp-metadata": "^7.0.0"
+    "gcp-metadata": "^8.1.0"
   },
   "devDependencies": {
     "eslint": "^9.0.0",
