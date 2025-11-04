@@ -18,7 +18,7 @@ tap.test(`"logging.googleapis.com/trace" should starts with "projects/${GCP_PROJ
 	const {response, log} = await getResponseWithLog(fastifyServerOptions)
 
 	equal(response.statusCode, 200)
-	match(log['logging.googleapis.com/trace'], new RegExp(`^projects\\/${GCP_PROJECT}\\/traces\\/`))
+	match(log['logging.googleapis.com/trace'], new RegExp(String.raw`^projects/${GCP_PROJECT}/traces/`))
 })
 
 tap.test('trace id should be an auto generated 32 characters log hexadecimal string if x-cloud-trace-context header not provided', async ({
