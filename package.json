@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "eslint": "^9.0.0",
-    "eslint-plugin-unicorn": "^61.0.1",
+    "eslint-plugin-unicorn": "^62.0.0",
     "flush-write-stream": "^2.0.0",
     "fastify": "^5.0.0",
     "nock": "^14.0.0",
